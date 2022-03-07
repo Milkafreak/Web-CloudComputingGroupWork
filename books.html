@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <TITLE>My Favourite Books</TITLE>
+        <META charset="utf8" />
+        <LINK rel="stylesheet" href="books.css" />
+        <LINK rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <DIV id="titlebox">
+                <H1 id="title">My Favourite Books</H1>
+            </DIV>
+            <div class="navbar">
+            <a class ="active" href="#library">Library</a>
+            <a href="#loans">Loans</a>
+            <a href="#Collections">Collections</a>
+            <div class="dropdown">
+              <button onclick="myFunction2()" class="dropbtn">Authors
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#">Stephen King</a>
+                <a href="#">Astrid Lindgren</a>
+                <a href="#">Fernando Pessoa</a>
+              </div>
+            </div>
+            <div class = search_area>
+                <form id="form" role="search">
+                    <input type="search" id="query" name="q" onkeyup="myFunction()"
+                     placeholder="Search..."
+                     aria-label="Search through site content">
+                </form>
+            </div> 
+        </div>
+        </header>
+
+        <ASIDE id="sidebar">
+            <h3>Maria Diniz</h3>
+            <p><a href="">Profile</a></p>
+            <p><a href="">Preferences</a></p>
+            <h3>Categorias</h3>
+            <p><a href="">Drama (1)</a></p>
+            <p><a href="">Historical Romance (2)</a></p>
+            <p><a href="">Science Fiction (5)</a></p>
+            <h3>Collections</h3>
+            <p><a href="">Holidays (4)</a></p>
+            <p><a href="">All timers (10)</a></p>
+            <h3>Wishlist</h3>
+            <ul id="Wishlist"></ul>
+        </ASIDE>
+
+        <SECTION>
+        
+            <ul id="listofbooks">
+                <li id = "list">
+                    <script src = "script.js"></script>
+                </li>
+            </ul>
+        </SECTION>
+
+        <FOOTER>
+            <div class="botnav">
+                <div class = "botnav1">
+                    <p>E-mail: <a href="">joe@someemail.somewhere</a></p>
+                    <p>Phone: 555 888 333</p>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="botnav2">
+                    <ul>
+                        <li>
+                            <p><a href="">Section 1</a></p>
+                        </li>
+                        <li>
+                            <p><a href="">Section 2</a></p>
+                        </li>
+                        <li>
+                            <p><a href="">Section 3</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </FOOTER>
+    </body>
+
+</html>
