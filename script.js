@@ -153,3 +153,37 @@ function ratingCount(books) {
   two_stars.innerHTML = twoStars + " of " + total_books + " books have 5⭐";
   one_stars.innerHTML = oneStars + " of " + total_books + " books have 5⭐";
 }
+
+//AVERAGE STATISTIC
+function averageRating(books) {
+  fiveStars = 0;
+  fourStars = 0;
+  threeStars = 0;
+  twoStars = 0;
+  oneStar = 0;
+  for (idx in books) {
+    if (books[idx].rating === 5) {
+      fiveStars += 1;
+    } else {
+      if (books[idx].rating === 4) {
+        fourStars += 1;
+      } else {
+        if (books[idx].rating === 3) {
+          threeStars += 1;
+        } else {
+          if (books[idx].rating) {
+            twoStars += 1;
+          } else {
+            oneStar += 1;
+          }
+        }
+      }
+    }
+  }
+  const total_books = books.length;
+  average =
+    (fiveStars * 5 + fourStars * 4 + threeStars * 3 + twoStars * 2 + oneStar) /
+    total_books;
+  let aver_books = document.getElementsByClassName("average");
+  aver_books.innerHTML = "The average rating is " + average + "⭐";
+}
