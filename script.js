@@ -1,88 +1,88 @@
-let wishlistcount = 0
+let wishlistcount = 0;
 
 function fillBooks(books) {
-  const list = document.getElementById("list")
-  for(idx in books ) {
-    const li = document.createElement("li")
+  const list = document.getElementById("list");
+  for (idx in books) {
+    const li = document.createElement("li");
 
-    const DOM_image = document.createElement("img")
-    DOM_image.src = books[idx].image
-    
-    const DOM_title = document.createElement("p")
-    DOM_title.innerText = books[idx].title
+    const DOM_image = document.createElement("img");
+    DOM_image.src = books[idx].image;
 
-    const DOM_author = document.createElement("p")
-    DOM_author.innerText = books[idx].authors
+    const DOM_title = document.createElement("p");
+    DOM_title.innerText = books[idx].title;
 
-    
-    const DOM_rating = document.createElement("span")
-    DOM_rating.classList.add("fa", "fa-star", "checked")
+    const DOM_author = document.createElement("p");
+    DOM_author.innerText = books[idx].authors;
 
-    const DOM_numberrating = document.createElement("p")
-    DOM_numberrating.innerText = books[idx].numberrating
-  
-    li.appendChild(DOM_image)
-    li.appendChild(DOM_title)
-    li.appendChild(DOM_author)
-    li.appendChild(DOM_numberrating)
+    const DOM_rating = document.createElement("span");
+    DOM_rating.classList.add("fa", "fa-star", "checked");
+
+    const DOM_numberrating = document.createElement("p");
+    DOM_numberrating.innerText = books[idx].numberrating;
+
+    li.appendChild(DOM_image);
+    li.appendChild(DOM_title);
+    li.appendChild(DOM_author);
+    li.appendChild(DOM_numberrating);
 
     for (let i = 0; i < books[idx].rating; i++) {
-      const DOM_rating = document.createElement("span")
-      DOM_rating.classList.add("fa", "fa-star", "checked")
-      li.appendChild(DOM_rating)
+      const DOM_rating = document.createElement("span");
+      DOM_rating.classList.add("fa", "fa-star", "checked");
+      li.appendChild(DOM_rating);
     }
 
-    li.classList.add("bookcard")
-    
-    var Wishlist = document.getElementById("Wishlist")
-    var DOM_Wishlist = document.createElement("li")
-    const WishButton = document.createElement("button")
-    WishButton.innerHTML = "Button"
-    WishButton.type = "Button"
-    WishButton.innerText = "Add to Wishlist"
-    WishButton.classList.add ("WishBtn")
-    WishButton.onclick = function() {
-      if (this.innerText=="Add to Wishlist") {
+    li.classList.add("bookcard");
+
+    var Wishlist = document.getElementById("Wishlist");
+    var DOM_Wishlist = document.createElement("li");
+    const WishButton = document.createElement("button");
+    WishButton.innerHTML = "Button";
+    WishButton.type = "Button";
+    WishButton.innerText = "Add to Wishlist";
+    WishButton.classList.add("WishBtn");
+    WishButton.onclick = function () {
+      if (this.innerText == "Add to Wishlist") {
         this.innerText = "Remove from Wishlist";
-        
+
         var a = document.getElementById("Wishlist");
         var li = document.createElement("li");
-        li.setAttribute('id', this.parentElement.children[1].innerText);
-        li.appendChild(document.createTextNode(this.parentElement.children[1].innerText));
+        li.setAttribute("id", this.parentElement.children[1].innerText);
+        li.appendChild(
+          document.createTextNode(this.parentElement.children[1].innerText)
+        );
         a.appendChild(li);
-      }
-      else {
+      } else {
         this.innerText = "Add to Wishlist";
         var a = document.getElementById("Wishlist");
-        var item = document.getElementById(this.parentElement.children[1].innerText);
+        var item = document.getElementById(
+          this.parentElement.children[1].innerText
+        );
         a.removeChild(item);
-      } 
-    }
-    li.append(WishButton)
-    list.append(li)
+      }
+    };
+    li.append(WishButton);
+    list.append(li);
   }
 }
 
-
 function loadBooks() {
-
   fetch("books.json")
-  .then( data => data.json() )
-  .then( books => fillBooks(books))
-
+    .then((data) => data.json())
+    .then((books) => fillBooks(books));
 }
 
-window.onload = () => { 
-  loadBooks() 
-}
+window.onload = () => {
+  loadBooks();
+  ratingCount();
+};
 
 function myFunction() {
   // Declare variables
   var input, filter, ul, li, p, i, txtValue;
-  input = document.getElementById('query');
+  input = document.getElementById("query");
   filter = input.value.toUpperCase();
   ul = document.getElementById("list");
-  li = ul.getElementsByTagName('li');
+  li = ul.getElementsByTagName("li");
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     p = li[i].getElementsByTagName("p")[0];
@@ -95,7 +95,6 @@ function myFunction() {
   }
 }
 
-
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction2() {
@@ -103,15 +102,54 @@ function myFunction2() {
 }
 
 // Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
       }
     }
   }
+};
+
+//STATISTICS
+function ratingCount(books) {
+  fiveStars = 0;
+  fourStars = 0;
+  threeStars = 0;
+  twoStars = 0;
+  oneStar = 0;
+  const five_stars = document.getElementsByClassName("five_stars");
+  const four_stars = document.getElementsByClassName("four_stars");
+  const three_stars = document.getElementsByClassName("three_stars");
+  const two_stars = document.getElementsByClassName("two_stars");
+  const one_stars = document.getElementsByClassName("one_stars");
+  for (idx in books) {
+    if (books[idx].rating === 5) {
+      fiveStars += 1;
+    } else {
+      if (books[idx].rating === 4) {
+        fourStars += 1;
+      } else {
+        if (books[idx].rating === 3) {
+          threeStars += 1;
+        } else {
+          if (books[idx].rating) {
+            twoStars += 1;
+          } else {
+            oneStar += 1;
+          }
+        }
+      }
+    }
+  }
+  const total_books = books.length;
+  five_stars.innerHTML = fiveStars + " of " + total_books + " books have 5⭐";
+  four_stars.innerHTML = fourStars + " of " + total_books + " books have 5⭐";
+  three_stars.innerHTML = threeStars + " of " + total_books + " books have 5⭐";
+  two_stars.innerHTML = twoStars + " of " + total_books + " books have 5⭐";
+  one_stars.innerHTML = oneStars + " of " + total_books + " books have 5⭐";
 }

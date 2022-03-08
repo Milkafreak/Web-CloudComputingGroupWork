@@ -33,24 +33,24 @@
   },
   {
     "id": 5,
-    "title": "Information Systems",
-    "authors": ["Richard Watson"],
-    "image": "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
-    "rating": 5,
-    "numberrating": 450
+    "title": "Where The Crawdads Sing",
+    "authors": ["Delia Owens"],
+    "image": "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/181/original/delia_owens.jpg?1644848865",
+    "rating": 4,
+    "numberrating": 570
   },
   {
     "id": 6,
-    "title": "Information Systems",
-    "authors": ["Richard Watson"],
-    "image": "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
+    "title": "The 4-Hour Work Week",
+    "authors": ["Timoti Ferris"],
+    "image": "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/179/original/4hour.jpg?1644848850",
     "rating": 5,
-    "numberrating": 450
+    "numberrating": 850
   },
   {
     "id": 7,
-    "title": "Information Systems",
-    "authors": ["Richard Watson"],
+    "title": "The Bitcoin Standard",
+    "authors": ["Saifedean Ammous"],
     "image": "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
     "rating": 5,
     "numberrating": 450
@@ -60,16 +60,16 @@
     "title": "Information Systems",
     "authors": ["Richard Watson"],
     "image": "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
-    "rating": 5,
-    "numberrating": 450
+    "rating": 3,
+    "numberrating": 122
   },
   {
     "id": 9,
-    "title": "Information Systems",
-    "authors": ["Richard Watson"],
-    "image": "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
+    "title": "The Girl With The Dragon Tattoo",
+    "authors": ["Stieg Larsson"],
+    "image": "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/170/original/stieg_larsson.jpg?1644838054",
     "rating": 5,
-    "numberrating": 450
+    "numberrating": 765
   },
   {
     "id": 10,
@@ -78,5 +78,165 @@
     "image": "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
     "rating": 5,
     "numberrating": 450
+  },
+  {
+    "id": 11,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 12,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 13,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 14,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 15,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 16,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 17,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 18,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 19,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 20,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 21,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 22,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 23,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 24,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 25,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 26,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 27,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 28,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 29,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
+  },
+  {
+    "id": 30,
+    "title": "",
+    "authors": [""],
+    "image": "",
+    "rating": ,
+    "numberrating": 
   }
 ]
