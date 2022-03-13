@@ -102,16 +102,17 @@ ul {
 
 body {
     font-family: sans-serif;
-    font-size: 14pt;
+    font-size: 11pt;
 }
 
 .bookcard {
 
     list-style: none;
     width: 150px;
-    height: 380px;
-    display: inline-block;
+    height: 450px;
     text-align: center;
+    display: inline-block;
+    vertical-align:text-bottom;
     padding: 25px;
     background-color: lightgray;
     margin: 15px;
