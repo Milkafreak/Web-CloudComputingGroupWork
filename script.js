@@ -134,8 +134,20 @@ function showScienceFiction() {
   cat.innerHTML = 'Science Fiction'
 };
 
+//Authors list
+const authors = {}
+ 
+for(const idx in books) {
+  if( authors[idx] ) { // It is already in the map
+    authors[idx].append(books[idx].id)
+  } else { // not yet in the map
+    authors[idx] = [books[idx].id] // a list with one element, the current book
+  }
+}
+
 //Add new object to json file
-let new_title = document.getElementsByClassName('title')
+let new_id = book
+let new_title = document.getElementsByClassName('title').value
 let 
 
 var newBook = {
