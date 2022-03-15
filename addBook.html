@@ -47,7 +47,7 @@
       <h3>Maria Diniz</h3>
       <p><a href="">Profile</a></p>
       <p><a href="">Preferences</a></p>
-      <h3>Categorias</h3>
+      <h3>Categories</h3>
       <p><a href="">Drama (1)</a></p>
       <p><a href="">Historical Romance (2)</a></p>
       <p><a href="">Science Fiction (5)</a></p>
@@ -64,6 +64,33 @@
         Title:
         <input type="text" placeholder="Introduce the title" class="title" />
       </p>
+      <p class="rating">
+        Rating:
+        <input
+          type="text"
+          placeholder="Introduce the rating from 1 to 5"
+          class="rating"
+        />
+      </p>
+      <p class="numberrating">
+        Votes:
+        <input
+          type="text"
+          placeholder="Introduce the votes"
+          class="numerrating"
+        />
+      </p>
+      <p class="category">
+        Category:
+        <button onclick="myFunction3()" class="dropbtn" id="choose_cat">
+          Choose Category
+          <div id="choose_category" class="dropdown-content">
+            <a href="#" onclick="showDrama()">Drama</a>
+            <a href="#" onclick="showHistoricalRomance()">Historical Romance</a>
+            <a href="#" onclick="showScienceFiction()">Science Fiction</a>
+          </div>
+        </button>
+      </p>
       <p class="authors">
         Authors:
         <input
@@ -71,24 +98,15 @@
           placeholder="Introduce the authors"
           class="authors"
         />
-        <p class="rating"
-          >Rating:
-          <input
-            type="text"
-            placeholder="Introduce the rating from 1 to 5"
-            class="rating"
-          />
       </p>
-      </p>
-      <p class="numberrating">
-        Votes (maybe put it random):
+      <p class="center">
         <input
-          type="text"
-          placeholder="Introduce the votes"
-          class="numerrating"
+          type="submit"
+          value="Add Book"
+          class="addBook_button"
+          onclick=""
         />
       </p>
-      <p class="center"><input type="submit" value="Add Book" class="addBook_button" onclick=""></p>
     </section>
 
     <footer>
