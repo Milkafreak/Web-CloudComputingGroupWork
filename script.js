@@ -117,46 +117,50 @@ window.onclick = function (event) {
 //Choose category when adding book
 function myFunction3() {
   document.getElementById("choose_category").classList.toggle("show");
-};
+}
 
 function showDrama() {
-  let cat = document.getElementById('choose_cat')
-  cat.innerHTML = 'Drama'
-};
+  let cat = document.getElementById("choose_cat");
+  cat.innerHTML = "Drama";
+}
 
 function showHistoricalRomance() {
-  let cat = document.getElementById('choose_cat')
-  cat.innerHTML = 'Historical Romance'
-};
+  let cat = document.getElementById("choose_cat");
+  cat.innerHTML = "Historical Romance";
+}
 
 function showScienceFiction() {
-  let cat = document.getElementById('choose_cat')
-  cat.innerHTML = 'Science Fiction'
-};
+  let cat = document.getElementById("choose_cat");
+  cat.innerHTML = "Science Fiction";
+}
 
 //Authors list
-const authors = {}
- 
-for(const idx in books) {
-  if( authors[idx] ) { // It is already in the map
-    authors[idx].append(books[idx].id)
-  } else { // not yet in the map
-    authors[idx] = [books[idx].id] // a list with one element, the current book
+const authors = {};
+
+for (const idx in books) {
+  if (authors[idx]) {
+    authors[idx].append(books[idx].id);
+  } else {
+    authors[idx] = [books[idx].id];
   }
 }
 
-//Add new object to json file
-let new_id = book
-let new_title = document.getElementsByClassName('title').value
-let 
+//Add new object (book) to json file
+function addNewBook() {
+  let new_id = len(books + 1);
+  let new_title = document.getElementsByClassName("title_").value;
+  let new_image = document.getElementsByClassName("image_").value;
+  let new_rating = document.getElementsByClassName("rating_").value;
+  let new_numberrating = document.getElementsByClassName("numberrating_").value;
 
-var newBook = {
-  'id': new_id,
-  'title': new_title,
-  'authors': new_author,
-  'image': new_image,
-  'rating': new_rating,
-  'numberrating': new_numberrating,
-};
+  var newBook = {
+    id: new_id,
+    title: new_title,
+    authors: new_author,
+    image: new_image,
+    rating: new_rating,
+    numberrating: new_numberrating,
+  };
 
-books.push();
+  books.push(newBook);
+}

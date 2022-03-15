@@ -60,27 +60,31 @@
 
     <section class="addNewBook">
       <h2 class="page_title">ADD A NEW BOOK</h2>
-      <p class="title">
+      <p>
         Title:
-        <input type="text" placeholder="Introduce the title" class="title" />
+        <input type="text" placeholder="Introduce the title" class="title_" />
       </p>
-      <p class="rating">
+      <p>
+        Image:
+        <input type="text" placeholder="Introduce the title" class="image_" />
+      </p>
+      <p>
         Rating:
         <input
           type="text"
           placeholder="Introduce the rating from 1 to 5"
-          class="rating"
+          class="rating_"
         />
       </p>
-      <p class="numberrating">
+      <p>
         Votes:
         <input
           type="text"
           placeholder="Introduce the votes"
-          class="numerrating"
+          class="numberrating_"
         />
       </p>
-      <p class="category">
+      <p>
         Category:
         <button onclick="myFunction3()" class="dropbtn" id="choose_cat">
           Choose Category
@@ -91,7 +95,7 @@
           </div>
         </button>
       </p>
-      <p class="authors">
+      <p>
         Authors:
         <input
           type="text"
@@ -104,7 +108,7 @@
           type="submit"
           value="Add Book"
           class="addBook_button"
-          onclick=""
+          onclick="addNewBook()"
         />
       </p>
     </section>
