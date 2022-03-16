@@ -172,7 +172,7 @@ function addNewBook() {
 function rating(){
   var lst = []
   for (d in books)
-    lst.append(d['ranting'])
+    lst.append(d['rating'])
 
   const ctx = document.getElementById('histogram').getContext('2d');
 
