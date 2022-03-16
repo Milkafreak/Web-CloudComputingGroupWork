@@ -164,3 +164,49 @@ function addNewBook() {
 
   books.push(newBook);
 }
+
+// For Statistics
+
+// Rating 
+
+function rating(){
+  var lst = []
+  for (d in books)
+    lst.append(d['ranting'])
+
+  const ctx = document.getElementById('histogram').getContext('2d');
+
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [1, 2, 3, 4, 5],
+      datasets: [{
+        label: 'Rating',
+        data: lst,
+        backgroundColor: 'blue',
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          display: false,
+          barPercentage: 1.3,
+          ticks: {
+            max: 3,
+          }
+        }, {
+          display: true,
+          ticks: {
+            autoSkip: false,
+            max: 4,
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+        }
+      }]
+    }
+  }
+})
+}
