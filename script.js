@@ -167,46 +167,117 @@ function addNewBook() {
 
 // For Statistics
 
-// Rating 
+var barColors = [
+  "rgba(0,0,255,1.0)",
+  "rgba(0,0,255,0.8)",
+  "rgba(0,0,255,0.6)",
+  "rgba(0,0,255,0.4)",
+  "rgba(0,0,255,0.2)",
+];
 
-function rating(){
-  var lst = []
-  for (d in books)
-    lst.append(d['rating'])
+function showRating() {
+  var five = 0;
+  var four = 0;
+  var three = 0;
+  var two = 0;
+  var one = 0;
 
-  const ctx = document.getElementById('histogram').getContext('2d');
+  for (r in books) {
+    if (r["rating"] == 5) {
+      five += 1;
+    } else {
+      if (r["rating"] == 4) {
+        four += 1;
+      } else {
+        if (r["rating"] == 3) {
+          three += 1;
+        } else {
+          if (r["rating"] == 2) {
+            two += 1;
+          } else {
+            one += 1;
+          }
+        }
+      }
+    }
+    return one, two, three, four, five;
+  }
+  const chart = new Chart(document.getElementById("myChart"), {
+    type: "bar",
+    data: {
+      labels: ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"],
+      datasets: [
+        {
+          label: "Rating",
+          backgroundColor: [
+            "#3e95cd",
+            "#8e5ea2",
+            "#3cba9f",
+            "#e8c3b9",
+            "#c45850",
+          ],
+          data: [5, 6, 7, 8, 9],
+        },
+      ],
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: "Number of books per rating",
+      },
+    },
+  });
+}
+
+//  Rating Chart
+
+function rating() {
+  var lst = [];
+  for (d in books) {
+    lst.append(d["rating"]);
+  }
+
+  const ctx = document.getElementById("histogram").getContext("2d");
 
   const chart = new Chart(ctx, {
-    type: 'bar',
+    type: "bar",
     data: {
       labels: [1, 2, 3, 4, 5],
-      datasets: [{
-        label: 'Rating',
-        data: lst,
-        backgroundColor: 'blue',
-      }]
+      datasets: [
+        {
+          label: "Rating",
+          data: lst,
+          backgroundColor: "blue",
+        },
+      ],
     },
     options: {
       scales: {
-        xAxes: [{
-          display: false,
-          barPercentage: 1.3,
-          ticks: {
-            max: 3,
-          }
-        }, {
-          display: true,
-          ticks: {
-            autoSkip: false,
-            max: 4,
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-        }
-      }]
-    }
-  }
-})
+        xAxes: [
+          {
+            display: false,
+            barPercentage: 1.3,
+            ticks: {
+              max: 3,
+            },
+          },
+          {
+            display: true,
+            ticks: {
+              autoSkip: false,
+              max: 4,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    },
+  });
 }

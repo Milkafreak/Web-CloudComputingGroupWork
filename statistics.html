@@ -8,6 +8,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
   </head>
   <body>
     <header>
@@ -58,13 +59,14 @@
     <section>
       <h2 class="page_title">Statistics</h2>
       <div class="row">
-        <div class="col-2", id="graph">
+        <div class="col-2" , id="graph">
           <h3>Rating Statistics</h3>
-          <canvas id="histogram" width="400" height="400"></canvas>
+          <button onclick="showRating()">Show Rating</button>
+          <canvas id="myChart" width="400" height="400"></canvas>
         </div>
         <div class="col-2">
           <h3>Average Rating</h3>
-          <p class="average"></p>
+          <canvas id="histogram" width="400" height="400"></canvas>
         </div>
       </div>
     </section>
