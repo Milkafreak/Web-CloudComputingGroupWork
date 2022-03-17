@@ -176,7 +176,7 @@ var barColors = [
   "rgba(0,0,255,0.2)",
 ];
 
-function showRating() {
+function ReturnChart(books) {
   var five = 0;
   var four = 0;
   var three = 0;
@@ -230,108 +230,3 @@ function showRating() {
     },
   });
 }
-
-//  Rating Chart
-
-function rating() {
-  var lst = [];
-  for (d in books) {
-    lst.append(d["rating"]);
-  }
-
-  const ctx = document.getElementById("histogram").getContext("2d");
-
-  const chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: [1, 2, 3, 4, 5],
-      datasets: [
-        {
-          label: "Rating",
-          data: lst,
-          backgroundColor: "blue",
-        },
-      ],
-    },
-    options: {
-      scales: {
-        xAxes: [
-          {
-            display: false,
-            barPercentage: 1.3,
-            ticks: {
-              max: 3,
-            },
-          },
-          {
-            display: true,
-            ticks: {
-              autoSkip: false,
-              max: 4,
-            },
-          },
-        ],
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
-          },
-        ],
-      },
-    },
-  });
-}
-
-
-
-function ReturnChart(){
-  var five = 0;
-  var four = 0;
-  var three = 0;
-  var two = 0;
-  var one = 0;
-
-  for (r in books) {
-    if (r.rating == 5) {
-      five += 1;
-    } else {
-      if (r.rating == 4) {
-        four += 1;
-      } else {
-        if (r.rating == 3) {
-          three += 1;
-        } else {
-          if (r.rating == 2) {
-            two += 1;
-          } else {
-            one += 1;
-          }
-        }
-      }
-    }
-  }
-  console.log(books)
-  var xValues =  ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"];
-  var yValues = [one, two, three, four,five];
-  var barColors = ["red", "green","blue","orange","brown"];
-  const chart =  new Chart("myChart", {
-    type: "bar",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {display: false},
-      title: {
-        display: true,
-        text: "World Wine Production 2018"
-      }
-    }
-  });
-  return chart;
-}
-
