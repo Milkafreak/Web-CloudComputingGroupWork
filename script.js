@@ -71,10 +71,22 @@ function loadBooks() {
     .then((books) => fillBooks(books));
 }
 
+function loadChart(){
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => ReturnChart(books));
+}
+
+function loadAve(){
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => Ave(books));
+}
+
 window.onload = () => {
   loadBooks();
-  ReturnChart();
-  AverageChart();
+  loadChart();
+  loadAve();
 };
 
 function myFunction() {
@@ -137,15 +149,13 @@ function showScienceFiction() {
 }
 
 //Authors list
-function authorsList(books) {
-  const authors = [];
+const authors = {};
 
-  for (const idx in books) {
-    if (authors[idx]) {
-      authors[idx].append(books[idx].id);
-    } else {
-      authors[idx] = [books[idx].id];
-    }
+for (const idx in books) {
+  if (authors[idx]) {
+    authors[idx].append(books[idx].id);
+  } else {
+    authors[idx] = [books[idx].id];
   }
 }
 
@@ -169,7 +179,7 @@ function addNewBook() {
   books.push(newBook);
 }
 
-// Books per rate
+// For Statistics
 
 var barColors = [
   "rgba(0,0,255,1.0)",
@@ -179,15 +189,28 @@ var barColors = [
   "rgba(0,0,255,0.2)",
 ];
 
-<<<<<<< Updated upstream
 function ReturnChart(books) {
-  const chart = new Chart(document.getElementById("myChart"), {
+  var data = [0,0,0,0,0]
+  for (r in books) {
+    if (books[r].rating == 5) {
+      data[4] += 1;
+    } else if (books[r].rating == 4) {
+      data[3] += 1;
+    } else  if (books[r].rating == 3) {
+      data[2] += 1;
+    } else if  (books[r].rating == 2) {
+      data[1] += 1;
+    } else {
+      data[0] += 1;
+          }
+        }
+  var chart = new Chart(document.getElementById("myHist"), {
     type: "bar",
     data: {
       labels: ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"],
       datasets: [
         {
-          label: "Rating",
+          label: "N. of books",
           backgroundColor: [
             "#3e95cd",
             "#8e5ea2",
@@ -195,34 +218,7 @@ function ReturnChart(books) {
             "#e8c3b9",
             "#c45850",
           ],
-          data: function cal(books) {
-            var five = 0;
-            var four = 0;
-            var three = 0;
-            var two = 0;
-            var one = 0;
-
-            for (r in books) {
-              if (r["rating"] == 5) {
-                five += 1;
-              } else {
-                if (r["rating"] == 4) {
-                  four += 1;
-                } else {
-                  if (r["rating"] == 3) {
-                    three += 1;
-                  } else {
-                    if (r["rating"] == 2) {
-                      two += 1;
-                    } else {
-                      one += 1;
-                    }
-                  }
-                }
-              }
-              return [one, two, three, four, five];
-            }
-          },
+          data: data,
         },
       ],
     },
@@ -231,98 +227,38 @@ function ReturnChart(books) {
       title: {
         display: true,
         text: "Number of books per rating",
-=======
-function showRating() {
-  var five = 0;
-  var four = 0;
-  var three = 0;
-  var two = 0;
-  var one = 0;
-
-  for (r in books) {
-    if (r["rating"] == 5) {
-      five += 1;
-    } else {
-      if (r["rating"] == 4) {
-        four += 1;
-      } else {
-        if (r["rating"] == 3) {
-          three += 1;
-        } else {
-          if (r["rating"] == 2) {
-            two += 1;
-          } else {
-            one += 1;
-          }
-        }
-      }
-    }
-  }
-}
-
-new Chart(document.getElementById("myChart"), {
-  type: "bar",
-  data: {
-    labels: ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"],
-    datasets: [
-      {
-        label: "Rating",
-        backgroundColor: ["red", "blue", "green", "grey", "pink"],
-        data: [5, 6, 7, 8, 9],
->>>>>>> Stashed changes
       },
-    ],
-  },
-  options: {
-    legend: { display: false },
-    title: {
-      display: true,
-      text: "Number of books per rating",
     },
-<<<<<<< Updated upstream
   });
-  return chart;
+  return chart
 }
-=======
-  },
-});
->>>>>>> Stashed changes
 
-// Average rate
-
-function AverageChart(books) {
-  const _chart = new Chart(document.getElementById("averageChart"), {
+function Ave(books){
+  var ave = [0]
+  for (i in books) {
+    ave[0] += books[i].rating
+  }
+  var a = ave/len(books)
+  var chart = new Chart(document.getElementById("myAve"), {
     type: "bar",
     data: {
-      labels: ["Average ⭐"],
+      labels: ["Average⭐"],
       datasets: [
         {
-          label: "Rating",
+          label: "Average Rate",
           backgroundColor: [
-            "#3e95cd",
-            "#8e5ea2",
-            "#3cba9f",
-            "#e8c3b9",
-            "#c45850",
+            "blue",
           ],
-          data: function av(books) {
-            var total = 0;
-            for (r in books) {
-              total += r["rating"];
-            }
-
-            return (average = total / len(books));
-          },
+          data: a,
         },
       ],
     },
     options: {
       legend: { display: false },
       title: {
-        display: true,
-        text: "Average rating",
+        display: false,
       },
     },
   });
-  return _chart;
+  return chart
 }

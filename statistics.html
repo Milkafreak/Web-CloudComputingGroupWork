@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+  
   <head>
     <title>My Favourite Books</title>
     <meta charset="utf8" />
@@ -9,7 +9,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   </head>
   <body>
     <header>
@@ -62,18 +63,12 @@
       <div class="row">
         <div class="col-2" , id="graph">
           <h3>Rating Statistics</h3>
-<<<<<<< Updated upstream
-          <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
-=======
-          <canvas id="myChart" width="400" height="400"></canvas>
->>>>>>> Stashed changes
+          <canvas id="myHist" style="width:100%;max-width:600px"></canvas>
+      <!--   <button onclick="ReturnChart()">Show Rating</button> -->
         </div>
         <div class="col-2">
           <h3>Average Rating</h3>
-          <canvas
-            id="averageChart"
-            style="width: 100%; max-width: 600px"
-          ></canvas>
+          <canvas id="myAve" style="width:100%;max-width:600px"></canvas>
         </div>
       </div>
     </section>
