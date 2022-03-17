@@ -71,13 +71,13 @@ function loadBooks() {
     .then((books) => fillBooks(books));
 }
 
-function loadChart(){
+function loadChart() {
   fetch("books.json")
     .then((data) => data.json())
     .then((books) => ReturnChart(books));
 }
 
-function loadAve(){
+function loadAve() {
   fetch("books.json")
     .then((data) => data.json())
     .then((books) => Ave(books));
@@ -190,20 +190,20 @@ var barColors = [
 ];
 
 function ReturnChart(books) {
-  var data = [0,0,0,0,0]
+  var data = [0, 0, 0, 0, 0];
   for (r in books) {
     if (books[r].rating == 5) {
       data[4] += 1;
     } else if (books[r].rating == 4) {
       data[3] += 1;
-    } else  if (books[r].rating == 3) {
+    } else if (books[r].rating == 3) {
       data[2] += 1;
-    } else if  (books[r].rating == 2) {
+    } else if (books[r].rating == 2) {
       data[1] += 1;
     } else {
       data[0] += 1;
-          }
-        }
+    }
+  }
   var chart = new Chart(document.getElementById("myHist"), {
     type: "bar",
     data: {
@@ -230,25 +230,26 @@ function ReturnChart(books) {
       },
     },
   });
-  return chart
+  return chart;
 }
 
-function Ave(books){
-  var ave = [0]
+function Ave(books) {
+  var ave = 0;
+  var total = 0;
   for (i in books) {
-    ave[0] += books[i].rating
+    ave += books[i].rating;
+    total += 1;
   }
-  var a = ave/len(books)
+  var a = [0];
+  a[0] = ave / total;
   var chart = new Chart(document.getElementById("myAve"), {
-    type: "bar",
+    type: "horizontalBar",
     data: {
       labels: ["Average⭐"],
       datasets: [
         {
           label: "Average Rate",
-          backgroundColor: [
-            "blue",
-          ],
+          backgroundColor: ["#3e95cd"],
           data: a,
         },
       ],
@@ -260,5 +261,5 @@ function Ave(books){
       },
     },
   });
-  return chart
+  return chart;
 }
