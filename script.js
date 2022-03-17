@@ -74,6 +74,7 @@ function loadBooks() {
 window.onload = () => {
   loadBooks();
   ReturnChart();
+  AverageChart();
 };
 
 function myFunction() {
@@ -136,13 +137,15 @@ function showScienceFiction() {
 }
 
 //Authors list
-const authors = {};
+function authorsList(books) {
+  const authors = [];
 
-for (const idx in books) {
-  if (authors[idx]) {
-    authors[idx].append(books[idx].id);
-  } else {
-    authors[idx] = [books[idx].id];
+  for (const idx in books) {
+    if (authors[idx]) {
+      authors[idx].append(books[idx].id);
+    } else {
+      authors[idx] = [books[idx].id];
+    }
   }
 }
 
@@ -166,7 +169,7 @@ function addNewBook() {
   books.push(newBook);
 }
 
-// For Statistics
+// Books per rate
 
 var barColors = [
   "rgba(0,0,255,1.0)",
@@ -177,32 +180,6 @@ var barColors = [
 ];
 
 function ReturnChart(books) {
-  var five = 0;
-  var four = 0;
-  var three = 0;
-  var two = 0;
-  var one = 0;
-
-  for (r in books) {
-    if (r["rating"] == 5) {
-      five += 1;
-    } else {
-      if (r["rating"] == 4) {
-        four += 1;
-      } else {
-        if (r["rating"] == 3) {
-          three += 1;
-        } else {
-          if (r["rating"] == 2) {
-            two += 1;
-          } else {
-            one += 1;
-          }
-        }
-      }
-    }
-    return one, two, three, four, five;
-  }
   const chart = new Chart(document.getElementById("myChart"), {
     type: "bar",
     data: {
@@ -217,7 +194,34 @@ function ReturnChart(books) {
             "#e8c3b9",
             "#c45850",
           ],
-          data: [5, 6, 7, 8, 9],
+          data: function cal(books) {
+            var five = 0;
+            var four = 0;
+            var three = 0;
+            var two = 0;
+            var one = 0;
+
+            for (r in books) {
+              if (r["rating"] == 5) {
+                five += 1;
+              } else {
+                if (r["rating"] == 4) {
+                  four += 1;
+                } else {
+                  if (r["rating"] == 3) {
+                    three += 1;
+                  } else {
+                    if (r["rating"] == 2) {
+                      two += 1;
+                    } else {
+                      one += 1;
+                    }
+                  }
+                }
+              }
+              return [one, two, three, four, five];
+            }
+          },
         },
       ],
     },
@@ -229,4 +233,44 @@ function ReturnChart(books) {
       },
     },
   });
+  return chart;
+}
+
+// Average rate
+
+function AverageChart(books) {
+  const _chart = new Chart(document.getElementById("averageChart"), {
+    type: "bar",
+    data: {
+      labels: ["Average ⭐"],
+      datasets: [
+        {
+          label: "Rating",
+          backgroundColor: [
+            "#3e95cd",
+            "#8e5ea2",
+            "#3cba9f",
+            "#e8c3b9",
+            "#c45850",
+          ],
+          data: function av(books) {
+            var total = 0;
+            for (r in books) {
+              total += r["rating"];
+            }
+
+            return (average = total / len(books));
+          },
+        },
+      ],
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: "Average rating",
+      },
+    },
+  });
+  return _chart;
 }
