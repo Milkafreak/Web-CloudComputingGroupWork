@@ -179,6 +179,7 @@ var barColors = [
   "rgba(0,0,255,0.2)",
 ];
 
+<<<<<<< Updated upstream
 function ReturnChart(books) {
   const chart = new Chart(document.getElementById("myChart"), {
     type: "bar",
@@ -230,11 +231,62 @@ function ReturnChart(books) {
       title: {
         display: true,
         text: "Number of books per rating",
+=======
+function showRating() {
+  var five = 0;
+  var four = 0;
+  var three = 0;
+  var two = 0;
+  var one = 0;
+
+  for (r in books) {
+    if (r["rating"] == 5) {
+      five += 1;
+    } else {
+      if (r["rating"] == 4) {
+        four += 1;
+      } else {
+        if (r["rating"] == 3) {
+          three += 1;
+        } else {
+          if (r["rating"] == 2) {
+            two += 1;
+          } else {
+            one += 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+new Chart(document.getElementById("myChart"), {
+  type: "bar",
+  data: {
+    labels: ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"],
+    datasets: [
+      {
+        label: "Rating",
+        backgroundColor: ["red", "blue", "green", "grey", "pink"],
+        data: [5, 6, 7, 8, 9],
+>>>>>>> Stashed changes
       },
+    ],
+  },
+  options: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: "Number of books per rating",
     },
+<<<<<<< Updated upstream
   });
   return chart;
 }
+=======
+  },
+});
+>>>>>>> Stashed changes
 
 // Average rate
 
