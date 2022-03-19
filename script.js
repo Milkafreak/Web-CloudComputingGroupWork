@@ -83,10 +83,17 @@ function loadAve() {
     .then((books) => Ave(books));
 }
 
+function JsonAddBook() {
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => addNewBook(books));
+}
+
 window.onload = () => {
   loadBooks();
   loadChart();
   loadAve();
+  JsonAddBook();
 };
 
 function myFunction() {
@@ -160,7 +167,7 @@ for (const idx in books) {
 }
 
 //Add new object (book) to json file
-function addNewBook() {
+function addNewBook(books) {
   let new_id = len(books + 1);
   let new_title = document.getElementsByClassName("title_").value;
   let new_image = document.getElementsByClassName("image_").value;
