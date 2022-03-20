@@ -2,8 +2,12 @@
   "name": "web-cloudcomputinggroupwork",
   "version": "1.0.0",
   "description": "This is a repo for the Web and Cloud Computing class in Summersemester 2022 at NOVA SBE.",
-  "main": "script.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/Milkafreak/Web-CloudComputingGroupWork/issues"
   },
-  "homepage": "https://github.com/Milkafreak/Web-CloudComputingGroupWork#readme"
+  "homepage": "https://github.com/Milkafreak/Web-CloudComputingGroupWork#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "sqlite3": "^5.0.2",
+    "tslint": "^6.1.3"
+  }
 }

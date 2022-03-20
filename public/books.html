@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>My Favourite Books</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="books.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="titlebox">
+        <h1 id="title">My Favourite Books</h1>
+      </div>
+      <div class="navbar">
+        <div class="dropdown">
+          <button onclick="myFunction2()" class="dropbtn">
+            Library
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="addBook.html">Add Book</a>
+            <a href="statistics.html">See Statistics</a>
+          </div>
+        </div>
+        <div class="search_area">
+          <form id="form" role="search">
+            <input
+              type="search"
+              id="query"
+              name="q"
+              onkeyup="myFunction()"
+              placeholder="Search..."
+              aria-label="Search through site content"
+            />
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <aside id="sidebar">
+      <h3>Maria Diniz</h3>
+      <p><a href="">Profile</a></p>
+      <p><a href="">Preferences</a></p>
+      <h3>Categorias</h3>
+      <p><a href="">Drama (1)</a></p>
+      <p><a href="">Historical Romance (2)</a></p>
+      <p><a href="">Science Fiction (5)</a></p>
+      <h3>Collections</h3>
+      <p><a href="">Holidays (4)</a></p>
+      <p><a href="">All timers (10)</a></p>
+      <h3>Wishlist</h3>
+      <ul id="Wishlist"></ul>
+    </aside>
+
+    <section>
+      <ul id="listofbooks">
+        <li id="list"></li>
+      </ul>
+    </section>
+
+    <footer>
+      <div class="botnav">
+        <div class="botnav1">
+          <p>E-mail: <a href="">joe@someemail.somewhere</a></p>
+          <p>Phone: 555 888 333</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="botnav2">
+          <ul>
+            <li>
+              <p><a href="">Section 1</a></p>
+            </li>
+            <li>
+              <p><a href="">Section 2</a></p>
+            </li>
+            <li>
+              <p><a href="">Section 3</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
