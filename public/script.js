@@ -66,14 +66,41 @@ function fillBooks(books) {
 }
 
 function loadBooks() {
-  fetch("../src/data/books.json")
+  fetch("books.json")
     .then((data) => data.json())
     .then((books) => fillBooks(books));
 }
 
+function loadChart() {
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => ReturnChart(books));
+}
+
+function loadAve() {
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => Ave(books));
+}
+
+function JsonAddBook() {
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => addNewBook(books));
+}
+
+function countBook() {
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => countBooks(books));
+}
+
 window.onload = () => {
   loadBooks();
-  ReturnChart();
+  loadChart();
+  loadAve();
+  JsonAddBook();
+  countBook();
 };
 
 function myFunction() {
@@ -147,7 +174,7 @@ for (const idx in books) {
 }
 
 //Add new object (book) to json file
-function addNewBook() {
+function addNewBook(books) {
   let new_id = len(books + 1);
   let new_title = document.getElementsByClassName("title_").value;
   let new_image = document.getElementsByClassName("image_").value;
@@ -176,40 +203,28 @@ var barColors = [
   "rgba(0,0,255,0.2)",
 ];
 
-function showRating() {
-  var five = 0;
-  var four = 0;
-  var three = 0;
-  var two = 0;
-  var one = 0;
-
+function ReturnChart(books) {
+  var data = [0, 0, 0, 0, 0];
   for (r in books) {
-    if (r["rating"] == 5) {
-      five += 1;
+    if (books[r].rating == 5) {
+      data[4] += 1;
+    } else if (books[r].rating == 4) {
+      data[3] += 1;
+    } else if (books[r].rating == 3) {
+      data[2] += 1;
+    } else if (books[r].rating == 2) {
+      data[1] += 1;
     } else {
-      if (r["rating"] == 4) {
-        four += 1;
-      } else {
-        if (r["rating"] == 3) {
-          three += 1;
-        } else {
-          if (r["rating"] == 2) {
-            two += 1;
-          } else {
-            one += 1;
-          }
-        }
-      }
+      data[0] += 1;
     }
-    return one, two, three, four, five;
   }
-  const chart = new Chart(document.getElementById("myChart"), {
+  var chart = new Chart(document.getElementById("myHist"), {
     type: "bar",
     data: {
       labels: ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"],
       datasets: [
         {
-          label: "Rating",
+          label: "N. of books",
           backgroundColor: [
             "#3e95cd",
             "#8e5ea2",
@@ -217,7 +232,7 @@ function showRating() {
             "#e8c3b9",
             "#c45850",
           ],
-          data: [5, 6, 7, 8, 9],
+          data: data,
         },
       ],
     },
@@ -229,109 +244,67 @@ function showRating() {
       },
     },
   });
+  return chart;
 }
 
-//  Rating Chart
-
-function rating() {
-  var lst = [];
-  for (d in books) {
-    lst.append(d["rating"]);
+function Ave(books) {
+  var ave = 0;
+  var total = 0;
+  for (i in books) {
+    ave += books[i].rating;
+    total += 1;
   }
-
-  const ctx = document.getElementById("histogram").getContext("2d");
-
-  const chart = new Chart(ctx, {
-    type: "bar",
+  var a = [0];
+  a[0] = ave / total;
+  var chart = new Chart(document.getElementById("myAve"), {
+    type: "horizontalBar",
     data: {
-      labels: [1, 2, 3, 4, 5],
+      labels: ["Average⭐"],
       datasets: [
         {
-          label: "Rating",
-          data: lst,
-          backgroundColor: "blue",
+          label: "Average Rate",
+          backgroundColor: ["#3e95cd"],
+          data: a,
         },
       ],
     },
     options: {
-      scales: {
-        xAxes: [
-          {
-            display: false,
-            barPercentage: 1.3,
-            ticks: {
-              max: 3,
-            },
-          },
-          {
-            display: true,
-            ticks: {
-              autoSkip: false,
-              max: 4,
-            },
-          },
-        ],
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
-          },
-        ],
+      legend: { display: false },
+      title: {
+        display: false,
       },
     },
-  });
-}
-
-
-
-function ReturnChart(){
-  var five = 0;
-  var four = 0;
-  var three = 0;
-  var two = 0;
-  var one = 0;
-
-  for (r in books) {
-    if (r.rating == 5) {
-      five += 1;
-    } else {
-      if (r.rating == 4) {
-        four += 1;
-      } else {
-        if (r.rating == 3) {
-          three += 1;
-        } else {
-          if (r.rating == 2) {
-            two += 1;
-          } else {
-            one += 1;
-          }
-        }
-      }
-    }
-  }
-  //console.log(books)
-  var xValues =  ["1⭐", "2⭐", "3⭐", "4⭐", "5⭐"];
-  var yValues = [one, two, three, four,five];
-  var barColors = ["red", "green","blue","orange","brown"];
-  const chart =  new Chart("myChart", {
-    type: "bar",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {display: false},
-      title: {
-        display: true,
-        text: "World Wine Production 2018"
-      }
-    }
   });
   return chart;
 }
 
+//Count books
+
+function countBooks(books) {
+  var countDrama = 0;
+  var countHistorical = 0;
+  var countNon = 0;
+  var countScience = 0;
+
+  for (i in books) {
+    if (books[i].category == "Drama") {
+      countDrama += 1;
+    } else if (books[i].category == "Non-fiction") {
+      countNon += 1;
+    } else if (books[i].category == "Science Fiction") {
+      countScience += 1;
+    } else {
+      countHistorical += 1;
+    }
+  }
+
+  let drama = document.getElementsByClassName("drama");
+  let historicalRomance = document.getElementsByClassName("historicalRomance");
+  let science = document.getElementsByClassName("scienceFiction");
+  let nonFiction = document.getElementsByClassName("nonFiction");
+
+  drama.innerHTML = "Drama (${countDrama})";
+  science.innerHTML = "Science Fiction (${countScience})";
+  nonFiction.innerHTML = "Non-fiction (${countNon})";
+  historicalRomance.innerHTML = "Historical Romance ${countHistorical})";
+}

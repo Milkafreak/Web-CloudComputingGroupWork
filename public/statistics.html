@@ -1,5 +1,4 @@
 <html>
-  
   <head>
     <title>My Favourite Books</title>
     <meta charset="utf8" />
@@ -8,6 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <script src="script.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -48,9 +48,10 @@
       <p><a href="">Profile</a></p>
       <p><a href="">Preferences</a></p>
       <h3>Categorias</h3>
-      <p><a href="">Drama (1)</a></p>
-      <p><a href="">Historical Romance (2)</a></p>
-      <p><a href="">Science Fiction (5)</a></p>
+      <p><a href="" class="drama">Drama</a></p>
+      <p><a href="" class="historialRomance">Historical Romance</a></p>
+      <p><a href="" class="scienceFiction">Science Fiction</a></p>
+      <p><a href="" class="nonFiction">Non-Fiction</a></p>
       <h3>Collections</h3>
       <p><a href="">Holidays (4)</a></p>
       <p><a href="">All timers (10)</a></p>
@@ -60,14 +61,14 @@
 
     <section>
       <h2 class="page_title">Statistics</h2>
-      <div class="row">
-        <div class="col-2" , id="graph">
+      <div class="stats">
+        <div class="stats1" , id="graph">
           <h3>Rating Statistics</h3>
-          <button onclick="showRating()">Show Rating</button>
+          <canvas id="myHist" style="width: 100%; max-width: 600px"></canvas>
         </div>
-        <div class="col-2">
+        <div class="stats2">
           <h3>Average Rating</h3>
-          <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+          <canvas id="myAve" style="width: 100%; max-width: 600px"></canvas>
         </div>
       </div>
     </section>
