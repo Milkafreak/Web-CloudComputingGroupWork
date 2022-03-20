@@ -48,9 +48,25 @@
       <p><a href="">Profile</a></p>
       <p><a href="">Preferences</a></p>
       <h3>Categories</h3>
-      <p><a href="" id="drama">Drama</a></p>
-      <p><a href="" id="scienceFiction">Science Fiction</a></p>
-      <p><a href="" id="nonFiction">Non-Fiction</a></p>
+      <p>
+        <a href="" class="category" id="drama" onclick="showByCategory()"
+          >Drama</a
+        >
+      </p>
+      <p>
+        <a
+          href=""
+          class="category"
+          id="scienceFiction"
+          onclick="showByCategory()"
+          >Science Fiction</a
+        >
+      </p>
+      <p>
+        <a href="" class="category" id="nonFiction" onclick="showByCategory()"
+          >Non-Fiction</a
+        >
+      </p>
       <h3>Collections</h3>
       <p><a href="">Holidays (4)</a></p>
       <p><a href="">All timers (10)</a></p>
@@ -90,7 +106,7 @@
           Choose Category
           <div id="choose_category" class="dropdown-content">
             <a href="#" onclick="showDrama()">Drama</a>
-            <a href="#" onclick="showHistoricalRomance()">Historical Romance</a>
+            <a href="#" onclick="showHistoricalRomance()">Non-fiction</a>
             <a href="#" onclick="showScienceFiction()">Science Fiction</a>
           </div>
         </button>

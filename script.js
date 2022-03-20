@@ -20,10 +20,16 @@ function fillBooks(books) {
     const DOM_numberrating = document.createElement("p");
     DOM_numberrating.innerText = books[idx].numberrating;
 
+    const DOM_category = document.createElement("p");
+    DOM_category.innerText = books[idx].category;
+    DOM_category.className = "selectCategory";
+    DOM_category.style.display = "none";
+
     li.appendChild(DOM_image);
     li.appendChild(DOM_title);
     li.appendChild(DOM_author);
     li.appendChild(DOM_numberrating);
+    li.appendChild(DOM_category);
 
     for (let i = 0; i < books[idx].rating; i++) {
       const DOM_rating = document.createElement("span");
@@ -154,7 +160,7 @@ function showDrama() {
 
 function showHistoricalRomance() {
   let cat = document.getElementById("choose_cat");
-  cat.innerHTML = "Historical Romance";
+  cat.innerHTML = "Non-fiction";
 }
 
 function showScienceFiction() {
@@ -190,12 +196,22 @@ function addNewBook(books) {
     numberrating: new_numberrating,
   };
 
-  if (new_title != '' && new_author != ''
-      && new_image != '' && new_rating != '' && new_numberrating != ''){
-        books.push(newBook);
-      } else{
-        alert("All boxes need to be filled!")
-      }
+  if (
+    new_title != " " &&
+    new_author != " " &&
+    new_image != " " &&
+    new_rating != " " &&
+    new_numberrating != ""
+  ) {
+    books.push(newBook);
+
+    new_title = " ";
+    new_image = " ";
+    new_rating = " ";
+    new_numberrating = " ";
+  } else {
+    alert("All boxes need to be filled!");
+  }
 }
 
 // For Statistics
@@ -287,7 +303,6 @@ function Ave(books) {
 
 function countBooks(books) {
   var countDrama = 0;
-  var countHistorical = 0;
   var countNon = 0;
   var countScience = 0;
 
@@ -301,7 +316,55 @@ function countBooks(books) {
     }
   }
 
-  document.getElementById("drama").innerHTML += "(" + countDrama + ")"
-  document.getElementById("scienceFiction").innerHTML += "(" + countScience + ")"
-  document.getElementById("nonFiction").innerHTML += "(" + countNon + ")"
+  document.getElementById("drama").innerHTML += "(" + countDrama + ")";
+  document.getElementById("scienceFiction").innerHTML +=
+    "(" + countScience + ")";
+  document.getElementById("nonFiction").innerHTML += "(" + countNon + ")";
+}
+
+//Show books by category
+
+function DRAMA() {
+  var ul = document.getElementById("list");
+  var li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    p = li[i].getElementsByTagName("p")[3];
+    var txtValue = p.textContent || p.innerText;
+    if (txtValue != "Drama") {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+function NONFICTION() {
+  var ul = document.getElementById("list");
+  var li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    p = li[i].getElementsByTagName("p")[3];
+    var txtValue = p.textContent || p.innerText;
+    if (txtValue != "Non-fiction") {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+function SCIENCE() {
+  var ul = document.getElementById("list");
+  var li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    p = li[i].getElementsByTagName("p")[3];
+    var txtValue = p.textContent || p.innerText;
+    if (txtValue != "Science Fiction") {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
 }
