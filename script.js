@@ -23,7 +23,6 @@ function fillBooks(books) {
     const DOM_category = document.createElement("p");
     DOM_category.innerText = books[idx].category;
     DOM_category.className = "selectCategory";
-    DOM_category.style.display = "none";
 
     li.appendChild(DOM_image);
     li.appendChild(DOM_title);
@@ -324,12 +323,12 @@ function countBooks(books) {
 
 //Show books by category
 
-function DRAMA() {
+function showDrama() {
   var ul = document.getElementById("list");
   var li = ul.getElementsByTagName("li");
 
   for (i = 0; i < li.length; i++) {
-    p = li[i].getElementsByTagName("p")[3];
+    const p = document.getElementsByClassName("selectCategory");
     var txtValue = p.textContent || p.innerText;
     if (txtValue != "Drama") {
       li[i].style.display = "";
@@ -339,12 +338,12 @@ function DRAMA() {
   }
 }
 
-function NONFICTION() {
+function showNonFiction() {
   var ul = document.getElementById("list");
   var li = ul.getElementsByTagName("li");
 
   for (i = 0; i < li.length; i++) {
-    p = li[i].getElementsByTagName("p")[3];
+    const p = document.getElementsByClassName("selectCategory");
     var txtValue = p.textContent || p.innerText;
     if (txtValue != "Non-fiction") {
       li[i].style.display = "";
@@ -354,12 +353,12 @@ function NONFICTION() {
   }
 }
 
-function SCIENCE() {
+function showScience() {
   var ul = document.getElementById("list");
   var li = ul.getElementsByTagName("li");
 
   for (i = 0; i < li.length; i++) {
-    p = li[i].getElementsByTagName("p")[3];
+    const p = document.getElementsByClassName("selectCategory");
     var txtValue = p.textContent || p.innerText;
     if (txtValue != "Science Fiction") {
       li[i].style.display = "";
