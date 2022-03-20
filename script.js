@@ -190,7 +190,12 @@ function addNewBook(books) {
     numberrating: new_numberrating,
   };
 
-  books.push(newBook);
+  if (new_title != '' && new_author != ''
+      && new_image != '' && new_rating != '' && new_numberrating != ''){
+        books.push(newBook);
+      } else{
+        alert("All boxes need to be filled!")
+      }
 }
 
 // For Statistics
@@ -291,20 +296,12 @@ function countBooks(books) {
       countDrama += 1;
     } else if (books[i].category == "Non-fiction") {
       countNon += 1;
-    } else if (books[i].category == "Science Fiction") {
-      countScience += 1;
     } else {
-      countHistorical += 1;
+      countScience += 1;
     }
   }
 
-  let drama = document.getElementsByClassName("drama");
-  let historicalRomance = document.getElementsByClassName("historicalRomance");
-  let science = document.getElementsByClassName("scienceFiction");
-  let nonFiction = document.getElementsByClassName("nonFiction");
-
-  drama.innerHTML = "Drama (${countDrama})";
-  science.innerHTML = "Science Fiction (${countScience})";
-  nonFiction.innerHTML = "Non-fiction (${countNon})";
-  historicalRomance.innerHTML = "Historical Romance ${countHistorical})";
+  document.getElementById("drama").innerHTML += "(" + countDrama + ")"
+  document.getElementById("scienceFiction").innerHTML += "(" + countScience + ")"
+  document.getElementById("nonFiction").innerHTML += "(" + countNon + ")"
 }
