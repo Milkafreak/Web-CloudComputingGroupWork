@@ -13,7 +13,7 @@ export interface Book {
 export const books = [
   {
     id: 1,
-    title: "University Physics (Ling)Test",
+    title: "University Physics (Ling)",
     authors: ["Samuel J. Ling"],
     image: "https://open.bccampus.ca/files/2016/10/OpenStax-University-Physics-Vol-1-151x196.jpg",
     rating: 5,

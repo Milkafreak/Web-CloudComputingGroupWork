@@ -66,7 +66,7 @@ function fillBooks(books) {
 }
 
 function loadBooks() {
-  fetch("books.json")
+  fetch("../src/data/books.json")
     .then((data) => data.json())
     .then((books) => fillBooks(books));
 }

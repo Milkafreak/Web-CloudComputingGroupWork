@@ -9,7 +9,8 @@
       false
     ],
     "no-console": false,
-    "for-in": false
+    "for-in": false,
+    "no-shadowed-variable": false
   },
   "rulesDirectory": []
 }
