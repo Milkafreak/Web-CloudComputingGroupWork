@@ -10,7 +10,8 @@ exports.books = [
         authors: ["Samuel J. Ling"],
         image: "https://open.bccampus.ca/files/2016/10/OpenStax-University-Physics-Vol-1-151x196.jpg",
         rating: 5,
-        numberrating: 300
+        numberrating: 300,
+        category: "Non-fiction"
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ exports.books = [
         authors: ["David S. Bright"],
         image: "https://open.bccampus.ca/files/2019/06/OTB218-01-Principles-of-Management-COVER-e1561494501428.jpg",
         rating: 5,
-        numberrating: 255
+        numberrating: 255,
+        category: "Non-fiction"
     },
     {
         id: 3,
@@ -26,7 +28,8 @@ exports.books = [
         authors: ["Charles Stangor"],
         image: "https://open.bccampus.ca/files/2013/11/OTB012-01-introduction-to-psychology-151x196.jpg",
         rating: 5,
-        numberrating: 120
+        numberrating: 120,
+        category: "Non-fiction"
     },
     {
         id: 4,
@@ -34,7 +37,8 @@ exports.books = [
         authors: ["Richard Watson"],
         image: "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
         rating: 5,
-        numberrating: 450
+        numberrating: 450,
+        category: "Non-fiction"
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ exports.books = [
         authors: ["Delia Owens"],
         image: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/181/original/delia_owens.jpg?1644848865",
         rating: 4,
-        numberrating: 570
+        numberrating: 570,
+        category: "Drama"
     },
     {
         id: 6,
@@ -50,7 +55,8 @@ exports.books = [
         authors: ["Timoti Ferris"],
         image: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/179/original/4hour.jpg?1644848850",
         rating: 5,
-        numberrating: 850
+        numberrating: 850,
+        category: "Non-fiction"
     },
     {
         id: 7,
@@ -58,15 +64,17 @@ exports.books = [
         authors: ["Saifedean Ammous"],
         image: "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
         rating: 5,
-        numberrating: 450
+        numberrating: 450,
+        category: "Non-fiction"
     },
     {
         id: 8,
-        title: "Information Systems",
-        authors: ["Richard Watson"],
-        image: "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
+        title: "Verity",
+        authors: ["Colleen Hoover"],
+        image: "https://img.wook.pt/images/verity-colleen-hoover/MXwyMzU2NDE5OHwxOTUzNjIwM3wxNjQ0MTkyMDAwMDAw/500x",
         rating: 3,
-        numberrating: 122
+        numberrating: 122,
+        category: "Drama"
     },
     {
         id: 9,
@@ -74,15 +82,17 @@ exports.books = [
         authors: ["Stieg Larsson"],
         image: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/170/original/stieg_larsson.jpg?1644838054",
         rating: 5,
-        numberrating: 765
+        numberrating: 765,
+        category: "Drama"
     },
     {
         id: 10,
-        title: "Information Systems",
-        authors: ["Richard Watson"],
-        image: "https://open.bccampus.ca/files/2013/11/OTB010-01-information-systems-151x196.jpg",
+        title: "The Testaments",
+        authors: ["Margaret Atwood"],
+        image: "https://upload.wikimedia.org/wikipedia/en/5/54/The_Testaments_%28Atwood_novel%29.png",
         rating: 5,
-        numberrating: 450
+        numberrating: 450,
+        category: "Science Fiction"
     },
     {
         id: 11,
@@ -90,7 +100,8 @@ exports.books = [
         authors: ["Jennifer E. Smith"],
         image: "https://m.media-amazon.com/images/I/41k5ka3zAML.jpg",
         rating: 4,
-        numberrating: 275
+        numberrating: 275,
+        category: "Drama"
     },
     {
         id: 12,
@@ -98,7 +109,8 @@ exports.books = [
         authors: ["Colleen Hoover"],
         image: "https://m.media-amazon.com/images/I/51Zu0ZwT0jL._SY346_.jpg",
         rating: 5,
-        numberrating: 71846
+        numberrating: 71846,
+        category: "Drama"
     },
     {
         id: 13,
@@ -106,7 +118,8 @@ exports.books = [
         authors: ["Tarana Burke"],
         image: "https://m.media-amazon.com/images/I/51uSP1mnuML.jpg",
         rating: 5,
-        numberrating: 940
+        numberrating: 940,
+        category: "Drama"
     },
     {
         id: 14,
@@ -114,7 +127,8 @@ exports.books = [
         authors: ["Michelle Zauner"],
         image: "https://m.media-amazon.com/images/I/51gNCTAbLJS._SY346_.jpg",
         rating: 5,
-        numberrating: 7218
+        numberrating: 7218,
+        category: "Drama"
     },
     {
         id: 15,
@@ -122,7 +136,8 @@ exports.books = [
         authors: ["W. Somerset Maugham", " Jane Smiley"],
         image: "https://images-na.ssl-images-amazon.com/images/I/71cOjTCUDpL.jpg",
         rating: 4,
-        numberrating: 1329
+        numberrating: 1329,
+        category: "Drama"
     },
     {
         id: 16,
@@ -130,7 +145,8 @@ exports.books = [
         authors: ["Haruki Murakami", "Jay Rubin"],
         image: "https://images-na.ssl-images-amazon.com/images/I/81dVKg6ZepL.jpg",
         rating: 5,
-        numberrating: 3427
+        numberrating: 3427,
+        category: "Drama"
     },
     {
         id: 17,
@@ -138,7 +154,8 @@ exports.books = [
         authors: ["Morgan Housel "],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/8571/9780857197689.jpg",
         rating: 4,
-        numberrating: 49174
+        numberrating: 49174,
+        category: "Non-fiction"
     },
     {
         id: 18,
@@ -146,7 +163,8 @@ exports.books = [
         authors: ["Luke Turner "],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/4746/9781474607162.jpg",
         rating: 3,
-        numberrating: 389
+        numberrating: 389,
+        category: "Drama"
     },
     {
         id: 19,
@@ -154,7 +172,8 @@ exports.books = [
         authors: ["George Orwell", "Erich Fromm"],
         image: "https://images-na.ssl-images-amazon.com/images/I/71kxa1-0mfL.jpg",
         rating: 5,
-        numberrating: 59725
+        numberrating: 59725,
+        category: "Science Fiction"
     },
     {
         id: 20,
@@ -162,7 +181,8 @@ exports.books = [
         authors: ["Stephen Hawking"],
         image: "https://images-na.ssl-images-amazon.com/images/I/A1xkFZX5k-L.jpg",
         rating: 5,
-        numberrating: 12738
+        numberrating: 12738,
+        category: "Non-fiction"
     },
     {
         id: 21,
@@ -170,7 +190,8 @@ exports.books = [
         authors: ["Jennie Allen"],
         image: "https://images-na.ssl-images-amazon.com/images/I/71F-7NDmDzL.jpg",
         rating: 5,
-        numberrating: 280
+        numberrating: 280,
+        category: "Non-fiction"
     },
     {
         id: 22,
@@ -178,7 +199,8 @@ exports.books = [
         authors: ["Sara Gay Forden"],
         image: "https://m.media-amazon.com/images/P/0060937750.01._SCLZZZZZZZ_SX500_.jpg",
         rating: 4,
-        numberrating: 2156
+        numberrating: 2156,
+        category: "Drama"
     },
     {
         id: 23,
@@ -186,7 +208,8 @@ exports.books = [
         authors: ["Kate Bowler", "Jessica Richie"],
         image: "https://images-na.ssl-images-amazon.com/images/I/81W4rcXl-hL.jpg",
         rating: 5,
-        numberrating: 106
+        numberrating: 106,
+        category: "Drama"
     },
     {
         id: 24,
@@ -194,7 +217,8 @@ exports.books = [
         authors: ["Stephen King"],
         image: "https://images-na.ssl-images-amazon.com/images/I/51TFxz2pJOL._SX328_BO1,204,203,200_.jpg",
         rating: 4,
-        numberrating: 100
+        numberrating: 100,
+        category: "Drama"
     },
     {
         id: 25,
@@ -202,7 +226,8 @@ exports.books = [
         authors: ["Frank Bruni"],
         image: "https://images-na.ssl-images-amazon.com/images/I/71SeW01C8kL.jpg",
         rating: 5,
-        numberrating: 58
+        numberrating: 58,
+        category: "Non-fiction"
     },
     {
         id: 26,
@@ -210,7 +235,8 @@ exports.books = [
         authors: ["Holly Jackson"],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/4052/9781405293181.jpg",
         rating: 4,
-        numberrating: 203686
+        numberrating: 203686,
+        category: "Drama"
     },
     {
         id: 27,
@@ -218,7 +244,8 @@ exports.books = [
         authors: ["Toshikazu Kawaguchi "],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/5290/9781529029581.jpg",
         rating: 3,
-        numberrating: 80262
+        numberrating: 80262,
+        category: "Drama"
     },
     {
         id: 28,
@@ -226,7 +253,8 @@ exports.books = [
         authors: ["Natasha Lunn"],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/2414/9780241448748.jpg",
         rating: 4,
-        numberrating: 1632
+        numberrating: 1632,
+        category: "Non-fiction"
     },
     {
         id: 29,
@@ -234,7 +262,8 @@ exports.books = [
         authors: [" Burton G. Malkiel", "Charles D. Ellis "],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/1198/9781119851417.jpg",
         rating: 4,
-        numberrating: 25
+        numberrating: 25,
+        category: "Non-fiction"
     },
     {
         id: 30,
@@ -242,7 +271,8 @@ exports.books = [
         authors: ["Michael Lewrick", "Patrick Link", "Larry Leifer"],
         image: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/1194/9781119467472.jpg",
         rating: 4,
-        numberrating: 303
+        numberrating: 303,
+        category: "Non-fiction"
     }
 ];
 //# sourceMappingURL=index.js.map
