@@ -25,8 +25,6 @@ CREATE TABLE author(
             }
             else {
                 const insert = 'INSERT INTO author (name) VALUES (?)';
-                // db.run(insert, [0,"Philip K. Dick"])
-                // db.run(insert, [1,"Frank Herbert"])
                 books_1.books.forEach(b => {
                     for (const i of b.authors) {
                         exports.db.run(insert, i);
@@ -40,7 +38,8 @@ CREATE TABLE book(
     title TEXT,
     image TEXT,
     rating INTEGER,
-    numberrating INTEGER
+    numberrating INTEGER,
+    category TEXT
 )
 `, (dberr) => {
             if (dberr) {
@@ -48,10 +47,10 @@ CREATE TABLE book(
             }
             else {
                 const insert = `
-INSERT INTO book (id,title, image, rating, numberrating) VALUES (?,?,?,?,?)
+INSERT INTO book (id,title, image, rating, numberrating, category) VALUES (?,?,?,?,?,?)
 `;
                 books_1.books.forEach(b => {
-                    exports.db.run(insert, [b.id, b.title, b.image, b.rating, b.numberrating]);
+                    exports.db.run(insert, [b.id, b.title, b.image, b.rating, b.numberrating, b.category]);
                 });
             }
         });
@@ -81,7 +80,7 @@ CREATE TABLE author_book(
                             }
                             else {
                                 // console.log(row.id)
-                                console.log(b.id);
+                                // console.log(b.id)
                                 // get the authors of the book and add it to the book
                                 // fn(row)
                                 exports.db.run(insert, [row.id, b.id]);

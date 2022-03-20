@@ -8,6 +8,7 @@ export interface Book {
     image: string,
     rating: number,
     numberrating: number
+    category: string
 }
 
 export const books = [
