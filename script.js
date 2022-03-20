@@ -89,11 +89,18 @@ function JsonAddBook() {
     .then((books) => addNewBook(books));
 }
 
+function countBook() {
+  fetch("books.json")
+    .then((data) => data.json())
+    .then((books) => countBooks(books));
+}
+
 window.onload = () => {
   loadBooks();
   loadChart();
   loadAve();
   JsonAddBook();
+  countBook();
 };
 
 function myFunction() {
@@ -269,4 +276,35 @@ function Ave(books) {
     },
   });
   return chart;
+}
+
+//Count books
+
+function countBooks(books) {
+  var countDrama = 0;
+  var countHistorical = 0;
+  var countNon = 0;
+  var countScience = 0;
+
+  for (i in books) {
+    if (books[i].category == "Drama") {
+      countDrama += 1;
+    } else if (books[i].category == "Non-fiction") {
+      countNon += 1;
+    } else if (books[i].category == "Science Fiction") {
+      countScience += 1;
+    } else {
+      countHistorical += 1;
+    }
+  }
+
+  let drama = document.getElementsByClassName("drama");
+  let historicalRomance = document.getElementsByClassName("historicalRomance");
+  let science = document.getElementsByClassName("scienceFiction");
+  let nonFiction = document.getElementsByClassName("nonFiction");
+
+  drama.innerHTML = "Drama (${countDrama})";
+  science.innerHTML = "Science Fiction (${countScience})";
+  nonFiction.innerHTML = "Non-fiction (${countNon})";
+  historicalRomance.innerHTML = "Historical Romance ${countHistorical})";
 }
